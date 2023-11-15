@@ -2,72 +2,102 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: roboto;
+}
+body{
+    background-color: lightblue;
 }
 
-body{
-    height: 100vh;
-    width: 100%;
-    background-color: lightblue;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.container{
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 265px);
+    gap: 15px;
+}
+
+.container li{
+    height: 250px;
+    list-style: none;
+    background-color: white;
+    padding: 15px 20px 20px;
+    border-radius: 5px;
+}
+
+.add-box, .setting .menu li{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
-.container{
-    width: 1200px;
-    height: 80vh;
-    background-color: white;
-    padding: 20px;
-    border-radius: 15px;
+
+.add-box{
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+.add-box .icon img{
+    width: 85px;
+    margin-bottom: 15px;
+}
+
+.container .note{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
 }
 
-.notes-cont{
-    width: 100%;
-    min-height: 500px;
-    background-color: aquamarine;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: 150px;
-    overflow: auto;
-    place-items: center;
-    row-gap: 30px;
+.note p{
+    font-size: 22px;
+    font-weight: 500;
 }
 
-.card{
-    height: 150px;
-    width: 200px;
-    background-color: coral;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding-left: 10px;
+.note span{
+    font-size: 16px;
+    display: block;
+    margin-top: 5px;
+
 }
 
-
-
-.add-btn-cont{
-    background-color: green;
-    height: 40px;
+.note .bottom-cont{
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-.add-note-btn{
-    /* height: 70%; */
-    width: 50%;
-    background-color: #fb923c;
-    border: 0;
-    outline: 0;
-    border-radius: 8px;
-    font-size: 24px;
-    padding: 5px 5px;
+    justify-content: space-between;
 }
 
-.add-note-btn:hover{
-    background-color: #f97316;
+.bottom-cont .setting img{
+    color: black;
+    cursor: pointer;
+    width: 20px;
+}
+
+.setting{
+    position: relative;
+}
+
+.setting .menu{
+    position: absolute;
+    bottom: 0;
+    right: -5px;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.15);
+    background-color: #fff;
+    padding: 5px 0;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.2s ease;
+}
+
+.setting:hover .menu{
+    transform: scale(1);
+}
+.setting .menu li{
+    height: 25px;
+    border-radius: 0;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.menu li:hover{
+    background-color: #f5f5f5;
 }
